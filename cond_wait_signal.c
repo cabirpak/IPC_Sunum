@@ -24,6 +24,7 @@ void *printEvenNum(void *arg)
 }
 void *printOddNum(void *arg)
 {
+    sleep(2);
     printf("odd basladi\n");
     while(countOdd < MAX)
     {
