@@ -15,7 +15,7 @@ void *printEvenNum(void *arg)
         pthread_mutex_lock(&mutex);
         
         pthread_cond_wait(&cond, &mutex);
-        printf("%d ", countEven);
+        printf("%d \n", countEven);
         countEven+=2;
         pthread_cond_signal(&cond);
         pthread_mutex_unlock(&mutex);
@@ -31,7 +31,7 @@ void *printOddNum(void *arg)
         pthread_mutex_lock(&mutex);
         
         pthread_cond_signal(&cond);
-        printf("%d ", countOdd);
+        printf("%d \n", countOdd);
         countOdd+=2;
         pthread_cond_wait(&cond, &mutex);
         pthread_mutex_unlock(&mutex);
